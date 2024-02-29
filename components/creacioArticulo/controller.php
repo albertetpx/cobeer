@@ -21,7 +21,7 @@ if (isset($_POST['enviar'])) {
                 "autor" => $autor,
                 "descripcion" => str_replace("'","\'",$resumen),
                 "idDepartamento" => $departamento,
-                "fechaCreacion" => date("Y-m-d")." ".date("H:m"),
+                "fechaCreacion" => date("Y-m-d")." ".date("H:i"),
                 "texto" => str_replace("'","\'",$descripcion),
                 "tags" => $tags
             )

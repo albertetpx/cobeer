@@ -1,0 +1,2 @@
+FIX:articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
+FIX: cuidado, hosting caduca?

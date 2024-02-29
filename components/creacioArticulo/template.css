@@ -45,7 +45,7 @@ html {
 
 .reveal {
   position: relative;
-  opacity: 0;
+  opacity: 1;                  /* DEBUG ONLY: opacity: 0 to reveal progressively  */
   transition: all 2s ease;
 }
 

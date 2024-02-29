@@ -3,6 +3,7 @@ include_once __DIR__ . '/queryBuilders/SimpleQuery.php';
 class Departamentos
 {
     public $departamento;
+    public $SimpleQuery;
 
     function __construct($departamento = array())
     {

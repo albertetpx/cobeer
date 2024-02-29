@@ -1,11 +1,13 @@
 <?php
 
+
 // OBJECT MODEL:
 class SimpleQuery {
     public $object;
     public $tableName;
+    public $dbh;
 
-    function __construct($object = array(), $tableName) {
+    function __construct($object, $tableName) {
         $this->object = $object;
         $this->tableName = $tableName;
         include("conexion.php");

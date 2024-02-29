@@ -43,7 +43,8 @@
         <div id="part4" class="part-form reveal">
             <label for="descripcion">Introduïu el contingut de l'article:</label>
             <br />
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea>
+            <!-- <textarea name="descripcion" id="descripcion" cols="30" rows="10" required></textarea> -->
+            <textarea id="mytextarea" name="descripcion">Hello, World!</textarea>
             <div class="button">
                 <a href="#part3">TORNAR</a>
                 <a href="#part5">SEGÜENT</a>
@@ -84,4 +85,7 @@
 </div>
 <script>
     <?php include __DIR__ . '/script.js'; ?>
+    tinymce.init({
+        selector: 'textarea#mytextarea'
+    });
 </script>

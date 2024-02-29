@@ -3,6 +3,7 @@ include_once __DIR__ . '/queryBuilders/SimpleQuery.php';
 class Recurso
 {
     public $recurso;
+    public $SimpleQuery;
 
     function __construct($recurso = array())
     {
