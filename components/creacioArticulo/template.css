@@ -230,10 +230,49 @@ html {
   transition: 0.3s ease-in-out;
 }
 
-.part-form .button .button-submit input:hover {
+.part-form .button .button-submit input.disabled{
+  display: inline-block;
+  font-size: 1.3rem;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0px 25px;
+  height: 45px;
+  background: transparent;
+  border-style: solid;
+  border-color: #fff;
+  color: grey;
+  border-radius: 40px;
+  border: 3px solid;
+  transition: 0.3s ease-in-out;
+  cursor:auto;
+}
+
+.part-form .button .button-submit input.enabled:hover {
   transform: translateY(-10px);
   background: #f7fa4d;
   border-color: #f7fa4d;
+  color: #121212;
+}
+
+.part-form-top input::placeholder{
+  color: red;
+}
+
+.part-form-top input.invalid-input{
+  border-color: orange;
+  color: #121212;
+}
+
+.part-form input::placeholder{
+  color: red;
+}
+
+.part-form textarea::placeholder{
+  color: red;
+}
+
+.part-form input.invalid-input{
+  border-color: orange;
   color: #121212;
 }
 
