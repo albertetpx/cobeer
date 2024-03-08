@@ -43,15 +43,13 @@ function checkSize(e) {
   e.preventDefault();
   files = document.getElementById('inputImagen').files.length;
   if(files != 0){
-    if(document.getElementById('inputImagen').files[0].size > 2000000){
+    if(document.getElementById('inputImagen').files[0].size > 2000000){  //TOFIX 
       alert("File size must be less than 2 MB");
       document.getElementById('inputImagen').value="";
     }
   }    
   validateForm();
 }
-
-
 
 function reveal() {
   // console.log("reveal");
