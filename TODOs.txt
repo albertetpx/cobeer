@@ -11,4 +11,6 @@ NEW: poder enlazar pots entre sí
 NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: cambiar logo i marca, cobeer, coobeer
 FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRON1TEND)
-FIX: responsive??????   
+FIX: responsive??????
+FIX: bullet list? 
+FIX: es comprovi mida de tots els fitxers adjuntats, no només del primer
