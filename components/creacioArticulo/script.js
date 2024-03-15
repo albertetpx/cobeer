@@ -9,7 +9,9 @@ window.onload = function () {
     elementpath: false,
     init_instance_callback: function (editor) {
       editor.on('input', validateForm);
-    }
+    },
+    promotion: false
+    // ,branding: false
   });
 
   let button = document.getElementById('submit');

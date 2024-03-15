@@ -13,7 +13,7 @@
                 <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" />
                 <div class="label">
                     <p>Des de 2018, l'ETP Xavier elabora de manera col·laborativa la seva pròpia cervesa.
-                    <br><i>(Projecte CoBeer, guardonat amb el Premi Nomeacuerdo del Nombre)</p>
+                    <br><i>(Projecte CooBeer, guardonat amb el Premi Nomeacuerdo del Nombre)</p>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="titleHome">
         <h1>
             <a href="" class="typewrite" data-period="1000"
-                data-type='[ "Hola", "Som ETP Xavier", "Som CoBeer", "Benvinguts"]'>
+                data-type='[ "Hola", "Som ETP Xavier", "Som CooBeer", "Benvinguts"]'>
                 <span class="wrap"></span>
             </a>
         </h1>

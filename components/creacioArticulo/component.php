@@ -82,4 +82,5 @@
         </div>
     </form>
 </div>
+<script src="../../../components/creacioArticulo/tinymce_6.8.3/tinymce/js/tinymce/tinymce.min.js"></script>
 <script src="../../../components/creacioArticulo/script.js"></script>

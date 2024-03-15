@@ -3,7 +3,7 @@
  footer{
     background-color: #C79D1E;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding-top: 30px;
     margin-top: auto;
 }
@@ -41,7 +41,7 @@ footer li{
     color: #ffffff;
     padding: 15px;
     margin-top: 30px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .footer-copyright p{
