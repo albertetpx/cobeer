@@ -18,6 +18,6 @@
     <img class="redes" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_instagram-512.png" alt="">
 </div>
 <div class="footer-copyright">
-    <p>Copyright @ 2023 All Rights Reserved. CooBeer 
+    <p>Projecte educatiu CooBeer &nbsp &nbsp &nbsp
         <a target="_blank" href="https://www.etpxavier.com">www.etpxavier.com</a></p>
 </div>   

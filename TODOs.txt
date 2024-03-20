@@ -1,16 +1,18 @@
--FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
-FIX: cuidado, hosting caduca?
+FIX: cuidado, hosting caduca!!!!!!!!!!!!!!!
+NEW: filtrar artículos por departamento
 NEW: poder fijar posts destacados
-NEW: añadir depto FARMACIA
--NEW: añadir en el footer link www.etpxavier.com
-NEW: filtrar y mostrar posts por dept
 NEW: editar posts
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
-NEW: poder enlazar pots entre sí
+NEW: poder enlazar posts entre sí
 NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
--FIX: cambiar logo i marca, cobeer, coobeer
--FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRON1TEND)
 FIX: responsive??????
 FIX: bullet list? 
 FIX: es comprovi mida de tots els fitxers adjuntats, no només del primer
+
+DONE:
+FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
+NEW: añadir depto FARMACIA
+NEW: añadir en el footer link www.etpxavier.com
+FIX: cambiar logo i marca, cobeer, coobeer
+FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRONTEND)

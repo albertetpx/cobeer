@@ -18,6 +18,7 @@
     justify-content: center;
     /* gap: 40px; */
     /* width: 50%; */
+    cursor: pointer;
 }
 
 .imagenesDepartamentos div {
@@ -81,12 +82,12 @@
 
 .imagenesDepartamentos .tituloDept {
 
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin: 25px;
 
     color: #E0B122;
     font-family: Catamaran;
-
+    line-height: normal;
 }
 
 .imageDepart {

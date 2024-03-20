@@ -29,8 +29,8 @@
             <label for="descripcion">Escolliu el departament:</label>
             <br />
             <select name="departamento" id="departamento" class="departamento">
+                <option value=""></option>
                 <?php foreach(getDepartamentos() as $departamento => $idDepartamento):?>
-                    <option value="">
                     <option id="<?=$idDepartamento?>" value="<?=$idDepartamento?>">
                         <?=$departamento?>
                     </option>

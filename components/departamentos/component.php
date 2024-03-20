@@ -1,3 +1,4 @@
+<?php include __DIR__ . '/controller.php'; ?>
 <style>
     <?php include __DIR__ . '/template.css'; ?>
 </style>
@@ -7,38 +8,18 @@
     <h1>Els nostres departaments</h1>
 </div>
 
-
 <div class="imagenesDepartamentos">
-
-    <div>
-    <img class ="imageDepart" src="https://i.ibb.co/wcXwzCy/Bmever-group-of-teenagers-making-a-bottle-of-beer-in-school-art-407b816b-4bd8-44b3-8b04-6d24006feab9.png" alt="">
-    <h1 class="tituloDept">
-        Comerç
-    </h1>
-    <!-- <p class="descripcionDept">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quo.
-    </p>   -->
-    </div>    
-    <div>
-    
-    <img class ="imageDepart" src="https://i.ibb.co/wcXwzCy/Bmever-group-of-teenagers-making-a-bottle-of-beer-in-school-art-407b816b-4bd8-44b3-8b04-6d24006feab9.png" alt="">
-    <h1 class="tituloDept">
-        Dietètica
-    </h1>   
-    <!-- <p class="descripcionDept">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quo.
-    </p>      -->
-</div>    
-    <div>
-    <img class ="imageDepart" src="https://i.ibb.co/wcXwzCy/Bmever-group-of-teenagers-making-a-bottle-of-beer-in-school-art-407b816b-4bd8-44b3-8b04-6d24006feab9.png" alt="">
-    <h1 class="tituloDept">
-        CAI
-    </h1>  
-    <!-- <p class="descripcionDept">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quo.
-    </p>       -->
-</div>
-
-
+    <?php foreach(getDepartamentos() as $departamento => $idDepartamento):?>
+        <?php error_reporting(E_ERROR | E_PARSE); ?>           
+        <div> 
+            <img class ="imageDepart" src="https://i.ibb.co/wcXwzCy/Bmever-group-of-teenagers-making-a-bottle-of-beer-in-school-art-407b816b-4bd8-44b3-8b04-6d24006feab9.png" alt="">
+            <h1 class="tituloDept">
+                <?=$departamento?>
+            </h1> 
+            <!-- <p class="descripcionDept">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quo.
+            </p>   -->
+        </div>  
+    <?php endforeach;?>
 </div>
 
