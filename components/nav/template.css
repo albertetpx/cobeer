@@ -25,6 +25,7 @@ label .hamburger {
   transform-origin: center;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
+  z-index: 999;
 }
 
 label .hamburger:after,
