@@ -333,7 +333,7 @@
 
 .carousel img {
   width: 390px;
-  height: 390px;
+  /* height: 390px; */
   /* establecer block para remover el espacio alrededor de las imágenes */
   display: block;
 }
@@ -374,7 +374,7 @@
 }
 
 .gallery ul {
-  height: 390px;
+  /* height: 390px; */
   width: 9999px;
   margin: 0;
   padding: 0;
