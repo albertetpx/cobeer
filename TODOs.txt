@@ -1,5 +1,4 @@
 FIX: cuidado, hosting caduca!!!!!!!!!!!!!!!
-NEW: filtrar artículos por departamento
 NEW: poder fijar posts destacados
 NEW: editar posts
 FIX: arrastrar imágenes al formulario creacion articulo
@@ -16,3 +15,4 @@ NEW: añadir depto FARMACIA
 NEW: añadir en el footer link www.etpxavier.com
 FIX: cambiar logo i marca, cobeer, coobeer
 FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRONTEND)
+NEW: filtrar artículos por departamento

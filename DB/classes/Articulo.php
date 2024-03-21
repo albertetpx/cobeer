@@ -37,5 +37,8 @@ class Articulo
     {
         return $this->SimpleQuery->search($tag);
     }
+    function listDepto($idDepartamento){
+        return $this->SimpleQuery->searchDpto($idDepartamento);
+    }
 }
 ?>

@@ -159,5 +159,20 @@ class SimpleQuery {
         }
         return $rows;
     }
+
+    function searchDpto($idDepartamento){
+        $query = "SELECT * FROM ".$this->tableName;
+        $query .= " WHERE idDepartamento = ".$idDepartamento;
+        $query .= ";";
+        // echo $query;
+        $result = $this->dbh->query($query);
+        $rows = [];
+        if (isset($result->num_rows)) {
+            while($row = $result->fetch_assoc()) {
+                array_push($rows, $row);
+            }
+        }
+        return $rows;
+    }
 }
 ?>
