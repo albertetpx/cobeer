@@ -6,9 +6,9 @@ NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
 NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
-FIX: bullet list? 
->>>>FIX: saltos de párrafo
->>>>FIX: despres crearArticle -> homepage
+FIX: bullet list?
+FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
+>>> FIX: foto dummy en carrousel
 >>>>FIX: articleCard: image aspect ratio
 
 DONE:
@@ -18,3 +18,4 @@ NEW: añadir en el footer link www.etpxavier.com
 FIX: cambiar logo i marca, cobeer, coobeer
 FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRONTEND)
 NEW: filtrar artículos por departamento
+FIX: conservar saltos de párrafo en ArticuloCompleto

@@ -15,6 +15,8 @@ if (isset($_POST['enviar'])) {
         $resumen = $_POST['resumen'];
         $tags = $_POST['tag'];
 
+        $descripcion = str_replace("</p>","</p><br>",$descripcion);
+
         $articuloDB = new Articulo(
             array(
                 "titulo" => str_replace("'","\'",$titulo),
