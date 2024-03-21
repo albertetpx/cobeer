@@ -7,7 +7,9 @@ NEW: poder enlazar posts entre sí
 NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
 FIX: bullet list? 
-FIX: es comprovi mida de tots els fitxers adjuntats, no només del primer
+>>>>FIX: saltos de párrafo
+>>>>FIX: despres crearArticle -> homepage
+>>>>FIX: articleCard: image aspect ratio
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy

@@ -5,9 +5,8 @@ function storeFiles($file, $idArticulo)
     $error = "";
     $paths = [];
     foreach ($file["tmp_name"] as $key => $tmp_name) {
-
         // Obtener la información del archivo
-        $file_name = $file["name"][$key];
+        $file_name = str_replace(" ","",$file["name"][$key]);
         $file_tmp = $file["tmp_name"][$key];
         $file_target = $target_dir . basename($file_name);
         $resource_target = "/DB/local/media/" . $idArticulo . "/" . basename($file_name);

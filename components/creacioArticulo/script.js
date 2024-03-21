@@ -25,7 +25,7 @@ window.onload = function () {
   document.querySelector('#mytextarea').addEventListener('input', checkValue); //TOFIX
   document.querySelector('textarea.resumen').addEventListener('input', checkValue);
   document.querySelector('input.tag').addEventListener('input', checkValue);
-  document.querySelector('#inputImagen').addEventListener('input', checkSize);
+  // document.querySelector('#inputImagen').addEve  ntListener('input', checkSize);
 }
 
 function checkValue(e) {
@@ -45,7 +45,7 @@ function checkSize(e) {
   e.preventDefault();
   files = document.getElementById('inputImagen').files.length;
   if(files != 0){
-    if(document.getElementById('inputImagen').files[0].size > 2000000){  //TOFIX 
+    if(document.getElementById('inputImagen').files[files-1].size > 2000000){  //TOFIX 
       alert("File size must be less than 2 MB");
       document.getElementById('inputImagen').value="";
     }
@@ -101,13 +101,6 @@ function validateForm() {
     console.log("Tags requerits");
     return;
   }
-  // else if (document.getElementById('inputImagen').files.length != 0){
-  //   if(document.getElementById('inputImagen').files[0].size > 2000000){
-  //     document.getElementById('submit').classList.add('disabled');
-  //     alert("File size must be less than 2 MB");
-  //     return;
-  //   }
-  // }
   else {
     document.getElementById('submit').classList.remove('disabled');
     document.getElementById('submit').disabled = false;

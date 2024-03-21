@@ -43,6 +43,20 @@
     cursor: pointer;
     margin: 20px;
 }
+
+#buttonArrastrar.disabled{
+    padding: 10px 25px;
+    font-size: 20px;
+    border: 0;
+    outline:  none;
+    background-color: grey;
+    color:white;
+    border-radius: 5px;
+    cursor: default;
+    /* pointer-events: none; */
+    margin: 20px;
+}
+
 /* Se crea de forma dinamica */
 #file-container {
     display: flex;
@@ -52,6 +66,8 @@
     border:solid 1px #ddd;
 }
 #viewArrastre{
+    display: flex;
+    column-gap: 2%;
     margin-top: 10px;
 }
 #status-text{
