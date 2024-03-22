@@ -59,7 +59,8 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
 
       <div class="user flex p-1">
 
-        <div class="avatar"></div>
+        <div class="avatar edit"></div>
+        <div class="avatar delete"></div>
         <div class="user-detail">
           <h2 class="name">
             <?= $articulo["autor"]; ?>
@@ -75,7 +76,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
   <form action="../home/index.php" method="POST">
     <input type="text" name="clau" autocomplete="off">
     <input type="submit" value="ESBORRA" name="enviar">
-    <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id">
+    <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
   </form>
 </div>
 <script>
@@ -113,11 +114,18 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
   };
 
   window.onload = function() {
-    let deleteButton = document.getElementsByClassName('avatar')[0];
+    let deleteButton = document.getElementsByClassName('delete')[0];
     deleteButton.addEventListener('click', deleteArticle);
+    let editButton = document.getElementsByClassName('edit')[0];
+    editButton.addEventListener('click', editArticle);
   }
 
   function deleteArticle() {
     document.getElementById("deleteModal").style.display = "block";
+  }
+
+  function editArticle(){
+    articleId = document.getElementById("articleId").value;
+    window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
   }
 </script>

@@ -296,7 +296,16 @@
   display: flex;
 }
 
-.post .avatar {
+.post .avatar.edit{
+  width: 2.3em;
+  height: 2.3em;
+  border-radius: 50%;
+  background: url("../../../assets/imagenes/edit.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.post .avatar.delete {
   width: 2em;
   height: 2em;
   border-radius: 50%;

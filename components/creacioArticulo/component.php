@@ -76,7 +76,7 @@
             <div class="button">
                 <a href="#part6">TORNAR</a>
                 <div class="button-submit">
-                    <input id="submit" type="submit" name="enviar" value="SUBMIT" />
+                    <input id="submit" type="submit" name="enviar" value="CREA ARTICLE" />
                 </div>
             </div>
         </div>

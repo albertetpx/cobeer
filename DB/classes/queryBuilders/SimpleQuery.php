@@ -71,7 +71,7 @@ class SimpleQuery {
         return $rows;
     }
     function listWith($filter) {
-        // $count = 0;
+        $count = 0;
         $where = $filter;
         $query = "SELECT * FROM ".$this->tableName;
         foreach($this->object as $key => $value) {
@@ -136,6 +136,7 @@ class SimpleQuery {
         $delete = $this->dbh->query($query);
     }
     function search($tag){
+        $count = 0;
         $where = $tag;
         $query = "SELECT * FROM ".$this->tableName;
         foreach($this->object as $key => $value) {
