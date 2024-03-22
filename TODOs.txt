@@ -8,7 +8,7 @@ NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
 FIX: bullet list?
 FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
->>>>FIX: articleCard: image aspect ratio
+>>>>FIX: more width to images en ArticuloCompleto
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
@@ -19,3 +19,4 @@ FIX: Afegir indicació de format i mida màxima dels arxius (VALIDAR FORM FRONTE
 NEW: filtrar artículos por departamento
 FIX: conservar saltos de párrafo en ArticuloCompleto
 FIX: foto dummy en carrousel
+FIX: articleCard: image aspect ratio en ArticuloCompleto
