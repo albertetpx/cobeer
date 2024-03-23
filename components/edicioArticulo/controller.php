@@ -11,11 +11,12 @@ if (isset($_POST['enviar'])) {
         $autor = $_POST['autor'];
         $departamento = $_POST['departamento'];
         $descripcion = $_POST['descripcion'];
-        // $departamento = 1;
         $resumen = $_POST['resumen'];
         $tags = $_POST['tag'];
 
-        $descripcion = str_replace("</p>","</p><br>",$descripcion);
+        // $descripcion = str_replace("</p>","</p><br>",$descripcion);
+        // $descripcion = str_replace("</li>","</li><br>",$descripcion);
+        // $descripcion = str_replace("<li>","<li>&bull;",$descripcion);
 
         $articuloDB = new Articulo(
             array(

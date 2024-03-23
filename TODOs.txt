@@ -1,6 +1,6 @@
 FIX: cuidado, hosting caduca!!!!!!!!!!!!!!!
 NEW: poder fijar posts destacados
-NEW: editar posts
+
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
@@ -8,7 +8,8 @@ NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
 FIX: bullet list?
 FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
->>>>FIX: more width to images en ArticuloCompleto
+>>>>NEW: editar posts FALTA IMAGENES
+>>>>Password to edit?
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
@@ -20,3 +21,4 @@ NEW: filtrar artículos por departamento
 FIX: conservar saltos de párrafo en ArticuloCompleto
 FIX: foto dummy en carrousel
 FIX: articleCard: image aspect ratio en ArticuloCompleto
+FIX: more width to images en ArticuloCompleto

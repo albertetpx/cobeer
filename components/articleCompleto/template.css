@@ -77,7 +77,7 @@
   .post {
     display: flex;
     padding-top: 40px;
-    justify-content: center;
+    justify-content: space-around;
     height: auto;
     min-height: 40em;
   }
@@ -204,6 +204,11 @@
 .post__text {
   font-weight: 300;
   animation: fade-in 0.8s ease-in-out both 0.5s;
+  
+}
+
+.post__text li{
+  display: list-item;
 }
 
 .post__link {
@@ -333,15 +338,15 @@
 .carousel {
   margin-top: 10vh;
   position: relative;
-  width: 398px;
-  padding: 10px 40px;
+  width: 560px;
+  padding: 10px 10px;
   border: 1px solid #CCC;
   border-radius: 15px;
   background: #eee;
 }
 
 .carousel img {
-  width: 390px;
+  width: 558px;
   /* height: 390px; */
   /* establecer block para remover el espacio alrededor de las imágenes */
   display: block;
@@ -355,9 +360,11 @@
   border-radius: 15px;
   border: 1px solid gray;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 480px;
   color: #444;
   display: block;
+  z-index: 10;
+  opacity: 30%;
 }
 
 .arrow:focus {
@@ -378,7 +385,7 @@
 }
 
 .gallery {
-  width: 390px;
+  width: 558px;
   overflow: hidden;
 }
 

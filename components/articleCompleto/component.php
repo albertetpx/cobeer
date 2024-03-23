@@ -13,7 +13,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
 
   <section class="awSlider">
     <div id="carousel" class="carousel">
-      <button class="arrow prev">⇦</button>
+      <button class="arrow prev">◁</button>
       <div class="gallery">
         <ul>
           <?php
@@ -30,7 +30,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
           ?>
         </ul>
       </div>
-      <button class="arrow next">⇨</button>
+      <button class="arrow next">▷</button>
     </div>
   </section>
 
@@ -56,9 +56,9 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
       <p class="post__text">
         <?= $articulo["texto"]; ?>
       </p>
-
+      
+      <br>
       <div class="user flex p-1">
-
         <div class="avatar edit"></div>
         <div class="avatar delete"></div>
         <div class="user-detail">
@@ -74,7 +74,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
   <h3>Segur que vols esborrar l'article?</h3>
   <p>Si es així, introdueix la paraula clau:</p>
   <form action="../home/index.php" method="POST">
-    <input type="text" name="clau" autocomplete="off">
+    <input type="password" name="clau" autocomplete="off">
     <input type="submit" value="ESBORRA" name="enviar">
     <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
   </form>
