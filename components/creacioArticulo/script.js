@@ -5,7 +5,7 @@ window.onload = function () {
     width: '100%',
     plugins: ["lists"],
     menubar: '',
-    toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist',
+    toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify',
     elementpath: false,
     init_instance_callback: function (editor) {
       editor.on('input', validateForm);
