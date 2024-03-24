@@ -128,6 +128,7 @@ class SimpleQuery {
         }
         $query .= "' WHERE id = ".$this->object['id'].";"; 
         $update = $this->dbh->query($query);
+        return $update;
     }
 
     function delete($filter) {

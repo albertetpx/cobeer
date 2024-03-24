@@ -7,9 +7,10 @@ NEW: poder enlazar posts entre sí
 NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
 FIX: add bullet list icon to editor (and preserve bullets in articuloCompleto)
-FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
->>>>NEW: editar posts FALTA IMAGENES
+>>>>FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
 >>>>Password to edit?
+>>>>NEW: editar posts FALTA IMAGENES
+
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy

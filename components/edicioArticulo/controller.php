@@ -33,18 +33,24 @@ if (isset($_POST['enviar'])) {
 
         $articulo = $articuloDB->update();
 
-        // $paths = storeFiles($_FILES["fileToUpload"], $articulo['id']);
-        // foreach ($paths as $path) {
-        //     $path = str_replace("\\","/",$path);
-        //     // echo $path;
-        //     $recursoDB = new Recurso(
-        //         array(
-        //             "url" => $path,
-        //             "idArticulo" => $articulo['id']
-        //         )
-        //     );
-        //     $recurso = $recursoDB->insert();
-        // }
+        // Remove local resources for currentArticleID
+        deleteDir($id);
+        // Remove all DB resources for currenArticleID
+        $recursosDB = new Recurso();
+        $recurso = $recursosDB->delete($id);
+
+        $paths = storeFiles($_FILES["fileToUpload"], $id);
+        foreach ($paths as $path) {
+            $path = str_replace("\\","/",$path);
+            // echo $path;
+            $recursoDB = new Recurso(
+                array(
+                    "url" => $path,
+                    "idArticulo" => $id
+                )
+            );
+            $recurso = $recursoDB->insert();
+        }
 
     } catch (Exception $e) {
 
