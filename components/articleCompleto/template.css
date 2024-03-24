@@ -319,6 +319,15 @@
   cursor: pointer;
 }
 
+.post .avatar.fix {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background: url("../../../assets/imagenes/fix.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
 /* Delete modal styles */
 #deleteModal{
   width: 40vw;

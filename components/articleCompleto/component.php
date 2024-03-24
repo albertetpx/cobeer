@@ -56,9 +56,10 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
       <p class="post__text">
         <?= $articulo["texto"]; ?>
       </p>
-      
+
       <br>
       <div class="user flex p-1">
+        <div class="avatar fix"></div>
         <div class="avatar edit"></div>
         <div class="avatar delete"></div>
         <div class="user-detail">
@@ -79,8 +80,9 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
     <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
     <input type="button" value="CANCEL·LA" id="cancelar">
   </form>
-</div>
+</div>  
 <script>
+  // FIX: mover a script.js
   /* etiqueta las imágenes pra poder rastrearlas, solo por conveniencia */
   let i = 1;
   for (let li of carousel.querySelectorAll('li')) {
@@ -127,11 +129,11 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
     document.getElementById("deleteModal").style.display = "block";
   }
 
-  function cancelDeletion(){
+  function cancelDeletion() {
     document.getElementById("deleteModal").style.display = "none";
   }
 
-  function editArticle(){
+  function editArticle() {
     articleId = document.getElementById("articleId").value;
     window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
   }

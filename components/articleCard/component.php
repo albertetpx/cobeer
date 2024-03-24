@@ -5,11 +5,15 @@
 <?php include_once __DIR__ . '/controller.php'; ?>
 
 <div class="defaultCardContainer">
-    <?php $articleUrl = "../../../view/pages/articuloDepartamento?articleId=".$articulo['id']; ?>
+    <?php if ($articulo['indBaja'] == 1) {
+        echo "<div class='defaultCardFixIcon'><img src='../../../assets/imagenes/fix.png'/></div>";
+    }
+    ?>
+    <?php $articleUrl = "../../../view/pages/articuloDepartamento?articleId=" . $articulo['id']; ?>
     <a href=<?= $articleUrl; ?>>
         <div class="defaultCardImage">
             <!-- <img src=<?= getFirstImage($articulo['id']); ?>  alt=""> -->
-            <img src=<?= "../../..".getFirstImage($articulo['id']); ?>  alt="">
+            <img src=<?= "../../.." . getFirstImage($articulo['id']); ?> alt="">
         </div>
 
         <div class="defaultCardText">
@@ -26,5 +30,4 @@
             </div>
         </div>
     </a>
-    
 </div>
