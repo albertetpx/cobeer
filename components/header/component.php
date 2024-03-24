@@ -13,7 +13,7 @@
     <?php include dirname(__DIR__, 1) . '/nav/component.php' ?>
 </div>
 
-<div class="watermark1">En construcció...</div>
+<!-- <div class="watermark1">En construcció...</div> -->
 
 <!-- Efecte espuma -->
 <div class="beer-foam">

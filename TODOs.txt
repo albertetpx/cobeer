@@ -8,6 +8,7 @@ FIX: add bullet list icon to editor (and preserve bullets in articuloCompleto)
 >>>>NEW: poder fijar posts destacados
 >>>>FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
 >>>>Password to edit?
+>>>>FIX: enllaçar icones del footer amb xarxes socials
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
