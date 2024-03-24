@@ -45,7 +45,7 @@ function checkSize(e) {
   e.preventDefault();
   files = document.getElementById('inputImagen').files.length;
   if(files != 0){
-    if(document.getElementById('inputImagen').files[files-1].size > 2000000){  //TOFIX 
+    if(document.getElementById('inputImagen').files[files-1].size > 5000000){
       alert("File size must be less than 2 MB");
       document.getElementById('inputImagen').value="";
     }

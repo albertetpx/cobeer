@@ -77,6 +77,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
     <input type="password" name="clau" autocomplete="off">
     <input type="submit" value="ESBORRA" name="enviar">
     <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
+    <input type="button" value="CANCEL·LA" id="cancelar">
   </form>
 </div>
 <script>
@@ -118,10 +119,16 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
     deleteButton.addEventListener('click', deleteArticle);
     let editButton = document.getElementsByClassName('edit')[0];
     editButton.addEventListener('click', editArticle);
+    let cancelButton = document.getElementById('cancelar');
+    cancelButton.addEventListener('click', cancelDeletion);
   }
 
   function deleteArticle() {
     document.getElementById("deleteModal").style.display = "block";
+  }
+
+  function cancelDeletion(){
+    document.getElementById("deleteModal").style.display = "none";
   }
 
   function editArticle(){
