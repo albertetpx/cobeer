@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include __DIR__ . '/controller.php'; ?>
 <html lang="en">
 
 <head>

@@ -1,13 +1,11 @@
 <?php include __DIR__ . '/controller.php'; ?>
 <style>
     <?php include __DIR__ . '/template.css';
-?>
+    ?>
 </style>
 
-<?php $articulo = retrieveArticle()[0];
-// var_dump($articulo); 
-// echo $articulo["titulo"];
-?>
+<?php $articulo = retrieveArticle()[0];?>
+
 <div class="creacioArticulo">
     <h3 class="errores">
         <?= $errores ?? null ?>
@@ -16,7 +14,7 @@
     <form action="#" method="post" id="form" enctype="multipart/form-data">
         <div id="part1" class="part-form-top part1">
             <label for="titulo">Introduïu el títol de l'article: </label> <br />
-            <input type="text" name="name" id="name" class="name" value="<?php echo $articulo["titulo"]; ?>"/>
+            <input type="text" name="name" id="name" class="name" value="<?php echo $articulo["titulo"]; ?>" />
             <span class="invalid-tooltip"></span>
             <div class="button" onclick="animation()">
                 <a href="#part2">SEGÜENT</a>
@@ -24,7 +22,7 @@
         </div>
         <div id="part2" class="part-form reveal">
             <label for="mail">Introduïu el responsable: </label> <br />
-            <input type="text" name="autor" id="autor" class="autor" value="<?php echo $articulo["autor"]; ?>"/>
+            <input type="text" name="autor" id="autor" class="autor" value="<?php echo $articulo["autor"]; ?>" />
             <div class="button">
                 <a href="#header">TORNAR</a>
                 <a href="#part3">SEGÜENT</a>
@@ -34,14 +32,14 @@
             <label for="descripcion">Escolliu el departament:</label>
             <br />
             <select name="departamento" id="departamento" class="departamento">
-                <option value="<?php echo $articulo["idDepartamento"];?>" id="<?php echo $articulo["idDepartamento"];?>">
+                <option value="<?php echo $articulo["idDepartamento"]; ?>" id="<?php echo $articulo["idDepartamento"]; ?>">
                     <?php echo getDepartamentoWith($articulo["idDepartamento"])["nombre"] ?>
                 </option>
-                <?php foreach(getDepartamentos() as $departamento => $idDepartamento):?>
-                    <option id="<?=$idDepartamento?>" value="<?=$idDepartamento?>">
-                        <?=$departamento?>
+                <?php foreach (getDepartamentos() as $departamento => $idDepartamento) : ?>
+                    <option id="<?= $idDepartamento ?>" value="<?= $idDepartamento ?>">
+                        <?= $departamento ?>
                     </option>
-                <?php endforeach;?>
+                <?php endforeach; ?>
             </select>
             <div class="button">
                 <a href="#part2">TORNAR</a>
@@ -51,11 +49,11 @@
         <div id="part4" class="part-form reveal">
             <label for="descripcion">Introduïu el contingut de l'article:</label>
             <br />
-            <textarea id="mytextarea" name="descripcion" ><?php echo $articulo["texto"]; ?></textarea>
+            <textarea id="mytextarea" name="descripcion"><?php echo $articulo["texto"]; ?></textarea>
             <div class="button">
                 <a href="#part3">TORNAR</a>
                 <a href="#part5">SEGÜENT</a>
-                </div>
+            </div>
         </div>
         <div id="part5" class="part-form reveal">
             <label for="resumen">Introduïu un resum: </label> <br />
@@ -70,8 +68,7 @@
         </div>
         <div id="part6" class="part-form reveal">
             <label for="tag">Introduïu el Tag o els Tags: </label> <br />
-            <input type="text" name="tag" id="tag" class="tag" placeholder="Ejemplo: #estoesguay,#estomolamas" 
-            value="<?php echo $articulo["tags"]; ?>"/>
+            <input type="text" name="tag" id="tag" class="tag" placeholder="Ejemplo: #estoesguay,#estomolamas" value="<?php echo $articulo["tags"]; ?>" />
             <div class="button">
                 <a href="#part5">TORNAR</a>
                 <a href="#part7">SEGÜENT</a>

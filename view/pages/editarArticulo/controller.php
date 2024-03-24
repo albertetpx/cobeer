@@ -3,7 +3,7 @@ include __DIR__ . '/../../../DB/classes/Articulo.php';
 include __DIR__ . '/../../../DB/classes/Recurso.php';
 include __DIR__ . '/../../../services/storage/index.php';
 
-if (isset($_POST['enviar'])) {
+if (isset($_POST['enviar'])) {  
     try {
         $titulo = $_POST['name'];
         $autor = $_POST['autor'];
@@ -11,12 +11,11 @@ if (isset($_POST['enviar'])) {
         $descripcion = $_POST['descripcion'];
         $resumen = $_POST['resumen'];
         $tags = $_POST['tag'];
-
-        $descripcion = str_replace("</p>", "</p><br>", $descripcion);
-        $descripcion = str_replace("<li>", "<li>&bull", $descripcion);
+        $id = $_POST['idArticulo'];
 
         $articuloDB = new Articulo(
             array(
+                "id" => $id,
                 "titulo" => str_replace("'", "\'", $titulo),
                 "autor" => $autor,
                 "descripcion" => str_replace("'", "\'", $resumen),
@@ -27,16 +26,22 @@ if (isset($_POST['enviar'])) {
             )
         );
 
-        $articulo = $articuloDB->insert();
+        $articulo = $articuloDB->update();
 
-        $paths = storeFiles($_FILES["fileToUpload"], $articulo['id']);
+        // Remove local resources for currentArticleID
+        deleteDir($id);
+        // Remove all DB resources for currenArticleID
+        $recursosDB = new Recurso();
+        $recurso = $recursosDB->delete($id);
+
+        $paths = storeFiles($_FILES["fileToUpload"], $id);
         foreach ($paths as $path) {
             $path = str_replace("\\", "/", $path);
             // echo $path;
             $recursoDB = new Recurso(
                 array(
                     "url" => $path,
-                    "idArticulo" => $articulo['id']
+                    "idArticulo" => $id
                 )
             );
             $recurso = $recursoDB->insert();

@@ -7,7 +7,6 @@ FIX: responsive??????
 FIX: add bullet list icon to editor (and preserve bullets in articuloCompleto)
 NEW: Password to edit?
 >>>>NEW: poder fijar posts destacados
->>>>FIX: despres crearArticle -> homepage (cambiar URL procesado form a homepage)
 >>>>FIX: enllaçar icones del footer amb xarxes socials
 >>>>Instruccions de cerca a home
 >>>>Enlazar menu departamentos en el navbar
