@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../../DB/classes/Articulo.php';
-include __DIR__ . '/../../DB/classes/Departamentos.php';
+include_once __DIR__ . '/../../DB/classes/Departamentos.php';
 
 function getArticulosTagged($tag)
 {

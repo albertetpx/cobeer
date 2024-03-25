@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../../DB/classes/Recurso.php';
 include __DIR__ . '/../../DB/classes/Articulo.php';
-include __DIR__ . '/../../DB/classes/Departamentos.php';
+include_once __DIR__ . '/../../DB/classes/Departamentos.php';
 
 // if (isset($_POST['enviar'])) {
 //     try {

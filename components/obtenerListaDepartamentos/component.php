@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../../DB/classes/Departamentos.php';
+include_once __DIR__ . '/../../DB/classes/Departamentos.php';
 function getArticulos()
 {
     $departamentosDB = new Departamentos();
