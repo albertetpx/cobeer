@@ -17,6 +17,12 @@ class Articulo
     {
         return $this->SimpleQuery->listLast10();
     }
+    function listPinned(){
+        return $this->SimpleQuery->listWith("indBaja=1");
+    }
+    function listLast10Unpinned(){
+        return $this->SimpleQuery->listLast10With("indBaja=0"); 
+    }
     function listWith($id)
     {
         return $this->SimpleQuery->listWith("id=".$id);

@@ -1,8 +1,45 @@
+window.onload = function () {
+  console.log("wewewe");
+  let deleteButton = document.getElementsByClassName('delete')[0];
+  deleteButton.addEventListener('click', deleteArticle);
+  let editButton = document.getElementsByClassName('edit')[0];
+  editButton.addEventListener('click', editArticle);
+  let pinButton = document.getElementsByClassName('pin')[0];
+  pinButton.addEventListener('click', pinArticle);
+
+  let cancelButtons = document.getElementsByClassName('cancelar');
+  Array.from(cancelButtons).forEach((cancelButton) => {
+    cancelButton.addEventListener('click', cancelDeletion);
+  });
+}
+
+function pinArticle(e) {
+  if(e.target.classList.contains("unpinned")){
+    document.getElementById("pinModal").style.display = "block";
+  }
+  else{
+    document.getElementById("unpinModal").style.display = "block";
+  }
+}
+
+function deleteArticle() {
+  document.getElementById("deleteModal").style.display = "block";
+}
+
+function cancelDeletion(e) {
+  e.target.parentElement.parentElement.style.display = "none";
+}
+
+function editArticle() {
+  articleId = document.getElementById("articleId").value;
+  window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
+}
+
+// Carrousel
 const carousel = document.querySelector("#carousel");
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 let currentPosition = 0;
-
 prevBtn.addEventListener("click", () => {
   currentPosition = currentPosition - 1 < 0 ? carousel.children.length - 1 : currentPosition - 1;
   carousel.style.transform = `translateX(-${currentPosition * 100}%)`;
@@ -18,7 +55,7 @@ setInterval(() => {
   carousel.style.transform = `translateX(-${currentPosition * 100}%)`;
 }, 10000);
 $('section.awSlider .carousel').carousel({
-	pause: "hover",
+  pause: "hover",
   interval: 2000
 });
 
@@ -26,12 +63,39 @@ var startImage = $('section.awSlider .item.active > img').attr('src');
 $('section.awSlider').append('<img src="' + startImage + '">');
 
 $('section.awSlider .carousel').on('slid.bs.carousel', function () {
- var bscn = $(this).find('.item.active > img').attr('src');
-	$('section.awSlider > img').attr('src',bscn);
+  var bscn = $(this).find('.item.active > img').attr('src');
+  $('section.awSlider > img').attr('src', bscn);
 });
 
+/* etiqueta las imágenes pra poder rastrearlas, solo por conveniencia */
+let i = 1;
+for (let li of carousel.querySelectorAll('li')) {
+  li.style.position = 'relative';
+  li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+  i++;
+}
 
-/* 
-Philips ambilight tv
-Üzerine gleince duruyor slide
-*/
+/* configuración */
+let width = 400; // ancho de las imágenes
+let count = 1; // conteo de las imágenes visibles
+
+let list = carousel.querySelector('ul');
+let listElems = carousel.querySelectorAll('li');
+
+let position = 0; // posición del desplazamiento del carrete
+
+carousel.querySelector('.prev').onclick = function () {
+  // desplazamiento izquierdo
+  position += width * count;
+  // no podemos mover demasiado a la izquierda, se acaban las imágenes
+  position = Math.min(position, 0)
+  list.style.marginLeft = position + 'px';
+};
+
+carousel.querySelector('.next').onclick = function () {
+  // desplazamiento derecho
+  position -= width * count;
+  // solo se puede desplazar el carrete de imágenes (longitud total de la cinta - conteo visibles)
+  position = Math.max(position, -width * (listElems.length - count));
+  list.style.marginLeft = position + 'px';
+};

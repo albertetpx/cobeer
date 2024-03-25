@@ -319,6 +319,25 @@
   cursor: pointer;
 }
 
+.post .avatar.pin.pinned {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background: url("../../../assets/imagenes/fix.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.post .avatar.pin.unpinned {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background: url("../../../assets/imagenes/fix.png");
+  background-size: cover;
+  cursor: pointer;
+  filter: grayscale(50%);
+}
+
 .post .avatar.fix {
   width: 2.2em;
   height: 2.2em;
@@ -332,7 +351,36 @@
 #deleteModal{
   width: 40vw;
   height: 30vh;
-  background-color: white;
+  background-color: #C79D1E;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 999;
+  top: 30vh;
+  left: 30vw;
+  padding: 3%;
+  text-align: center;
+  display: none;
+}
+
+#pinModal{
+  width: 40vw;
+  height: 30vh;
+  background-color: #C79D1E;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 999;
+  top: 30vh;
+  left: 30vw;
+  padding: 3%;
+  text-align: center;
+  display: none;
+}
+
+#unpinModal{
+  width: 40vw;
+  height: 30vh;
+  background-color: #C79D1E;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
   z-index: 999;
   top: 30vh;

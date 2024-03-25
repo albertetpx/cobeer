@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include __DIR__ . '/controller.php'; ?>  
 <html lang="en">
 
 <head>
@@ -11,13 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
 </head>
 
-<body>
-    <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            include __DIR__ . '/controller.php';
-            borrarArticle();
-        }
-    ?>
+<body>  
     <div class="layout">
 
         <header>

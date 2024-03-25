@@ -2,29 +2,32 @@
 
 
 // OBJECT MODEL:
-class SimpleQuery {
+class SimpleQuery
+{
     public $object;
     public $tableName;
     public $dbh;
 
-    function __construct($object, $tableName) {
+    function __construct($object, $tableName)
+    {
         $this->object = $object;
         $this->tableName = $tableName;
         include("conexion.php");
         $this->dbh = $dbh;
     }
-    function list($orderby) {
+    function list($orderby)
+    {
         $count = 0;
         $where = "";
-        $query = "SELECT * FROM ".$this->tableName;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $where .= " AND ";
             }
-            $where .= $key." = '".$value."'";
+            $where .= $key . " = '" . $value . "'";
             $count++;
         }
-        if($count>0){
+        if ($count > 0) {
             $query .= " WHERE ";
             $query .= $where;
         }
@@ -35,24 +38,25 @@ class SimpleQuery {
         $result = $this->dbh->query($query);
         $rows = [];
         if (isset($result->num_rows)) {
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 array_push($rows, $row);
             }
         }
         return $rows;
     }
-    function listLast10() {
+    function listLast10()
+    {
         $count = 0;
         $where = "";
-        $query = "SELECT * FROM ".$this->tableName;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $where .= " AND ";
             }
-            $where .= $key." = '".$value."'";
+            $where .= $key . " = '" . $value . "'";
             $count++;
         }
-        if($count>0){
+        if ($count > 0) {
             $query .= " WHERE ";
             $query .= $where;
         }
@@ -64,21 +68,52 @@ class SimpleQuery {
         $result = $this->dbh->query($query);
         $rows = [];
         if (isset($result->num_rows)) {
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 array_push($rows, $row);
             }
         }
         return $rows;
     }
-    function listWith($filter) {
+    function listLast10With($filter)
+    {
         $count = 0;
         $where = $filter;
-        $query = "SELECT * FROM ".$this->tableName;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $where .= " AND ";
             }
-            $where .= $key." = '".$value."'";
+            $where .= $key . " = '" . $value . "'";
+            $count++;
+        }
+
+        $query .= " WHERE ";
+        $query .= $where;
+
+        $query .= " ORDER BY ";
+        $query .= "fechaCreacion";
+        $query .= " DESC";
+        $query .= " LIMIT 10";
+        $query .= ";";
+        $result = $this->dbh->query($query);
+        $rows = [];
+        if (isset($result->num_rows)) {
+            while ($row = $result->fetch_assoc()) {
+                array_push($rows, $row);
+            }
+        }
+        return $rows;
+    }
+    function listWith($filter)
+    {
+        $count = 0;
+        $where = $filter;
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
+                $where .= " AND ";
+            }
+            $where .= $key . " = '" . $value . "'";
             $count++;
         }
         $query .= " WHERE ";
@@ -88,18 +123,19 @@ class SimpleQuery {
         $result = $this->dbh->query($query);
         $rows = [];
         if (isset($result->num_rows)) {
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 array_push($rows, $row);
             }
         }
         return $rows;
     }
-    function insert() {
-        $keys = "INSERT INTO ".$this->tableName."(`";
+    function insert()
+    {
+        $keys = "INSERT INTO " . $this->tableName . "(`";
         $values = "VALUES ('";
         $count = 0;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $keys .= "`, `";
                 $values .= "','";
             }
@@ -116,65 +152,71 @@ class SimpleQuery {
         return $this->object;
     }
 
-    function update() {
-        $query = "UPDATE ".$this->tableName." SET ";
+    function update()
+    {
+        $query = "UPDATE " . $this->tableName . " SET ";
         $count = 0;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $query .= "' , ";
             }
-            $query .= $key." = '".$value;
-            $count++;
+            if ($key != 'id') {
+                $query .= $key . " = '" . $value;
+                $count++;
+            }
         }
-        $query .= "' WHERE id = ".$this->object['id'].";"; 
+        $query .= "' WHERE id = " . $this->object['id'] . ";";
+        // echo $query;
         $update = $this->dbh->query($query);
         return $update;
     }
 
-    function delete($filter) {
-        $query = "DELETE FROM ".$this->tableName." WHERE ".$filter.";";
+    function delete($filter)
+    {
+        $query = "DELETE FROM " . $this->tableName . " WHERE " . $filter . ";";
         // echo $query;
         $delete = $this->dbh->query($query);
     }
-    function search($tag){
+    function search($tag)
+    {
         $count = 0;
         $where = $tag;
-        $query = "SELECT * FROM ".$this->tableName;
-        foreach($this->object as $key => $value) {
-            if($count > 0){
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
                 $where .= " AND ";
             }
-            $where .= $key." = '".$value."'";
+            $where .= $key . " = '" . $value . "'";
             $count++;
         }
         $query .= " WHERE MATCH(titulo,autor,texto,descripcion,tags) AGAINST(";
-        $query .= "'".$tag."'";
+        $query .= "'" . $tag . "'";
         $query .= ")";
         $query .= ";";
         // echo $query;
         $result = $this->dbh->query($query);
         $rows = [];
         if (isset($result->num_rows)) {
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 array_push($rows, $row);
             }
         }
         return $rows;
     }
 
-    function searchDpto($idDepartamento){
-        $query = "SELECT * FROM ".$this->tableName;
-        $query .= " WHERE idDepartamento = ".$idDepartamento;
+    function searchDpto($idDepartamento)
+    {
+        $query = "SELECT * FROM " . $this->tableName;
+        $query .= " WHERE idDepartamento = " . $idDepartamento;
         $query .= ";";
         // echo $query;
         $result = $this->dbh->query($query);
         $rows = [];
         if (isset($result->num_rows)) {
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 array_push($rows, $row);
             }
         }
         return $rows;
     }
 }
-?>

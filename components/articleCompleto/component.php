@@ -59,7 +59,11 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
 
       <br>
       <div class="user flex p-1">
-        <div class="avatar fix"></div>
+        <?php if ($articulo["indBaja"] == 1) {
+          echo '<div class="avatar pin pinned"></div>';
+        } elseif ($articulo["indBaja"] == 0) {
+          echo '<div class="avatar pin unpinned"></div>';
+        } ?>
         <div class="avatar edit"></div>
         <div class="avatar delete"></div>
         <div class="user-detail">
@@ -76,65 +80,31 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
   <p>Si es així, introdueix la paraula clau:</p>
   <form action="../home/index.php" method="POST">
     <input type="password" name="clau" autocomplete="off">
-    <input type="submit" value="ESBORRA" name="enviar">
+    <input type="submit" value="ESBORRA" name="esborrar">
     <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
-    <input type="button" value="CANCEL·LA" id="cancelar">
+    <input type="button" value="CANCEL·LA" class="cancelar">
   </form>
-</div>  
+</div>
+<div id="pinModal">
+  <h3>Segur que vols fixar l'article?</h3>
+  <p>Si es així, introdueix la paraula clau:</p>
+  <form action="../home/index.php" method="POST">
+    <input type="password" name="clau" autocomplete="off">
+    <input type="submit" value="FIXA" name="fixar">
+    <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId2">
+    <input type="button" value="CANCEL·LA" class="cancelar">
+  </form>
+</div>
+<div id="unpinModal">
+  <h3>Segur que vols deixar de fixar l'article?</h3>
+  <p>Si es així, introdueix la paraula clau:</p>
+  <form action="../home/index.php" method="POST">
+    <input type="password" name="clau" autocomplete="off">
+    <input type="submit" value="DESFIXA" name="desfixar">
+    <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId3">
+    <input type="button" value="CANCEL·LA" class="cancelar">
+  </form>
+</div>
 <script>
-  // FIX: mover a script.js
-  /* etiqueta las imágenes pra poder rastrearlas, solo por conveniencia */
-  let i = 1;
-  for (let li of carousel.querySelectorAll('li')) {
-    li.style.position = 'relative';
-    li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
-    i++;
-  }
-
-  /* configuración */
-  let width = 400; // ancho de las imágenes
-  let count = 1; // conteo de las imágenes visibles
-
-  let list = carousel.querySelector('ul');
-  let listElems = carousel.querySelectorAll('li');
-
-  let position = 0; // posición del desplazamiento del carrete
-
-  carousel.querySelector('.prev').onclick = function() {
-    // desplazamiento izquierdo
-    position += width * count;
-    // no podemos mover demasiado a la izquierda, se acaban las imágenes
-    position = Math.min(position, 0)
-    list.style.marginLeft = position + 'px';
-  };
-
-  carousel.querySelector('.next').onclick = function() {
-    // desplazamiento derecho
-    position -= width * count;
-    // solo se puede desplazar el carrete de imágenes (longitud total de la cinta - conteo visibles)
-    position = Math.max(position, -width * (listElems.length - count));
-    list.style.marginLeft = position + 'px';
-  };
-
-  window.onload = function() {
-    let deleteButton = document.getElementsByClassName('delete')[0];
-    deleteButton.addEventListener('click', deleteArticle);
-    let editButton = document.getElementsByClassName('edit')[0];
-    editButton.addEventListener('click', editArticle);
-    let cancelButton = document.getElementById('cancelar');
-    cancelButton.addEventListener('click', cancelDeletion);
-  }
-
-  function deleteArticle() {
-    document.getElementById("deleteModal").style.display = "block";
-  }
-
-  function cancelDeletion() {
-    document.getElementById("deleteModal").style.display = "none";
-  }
-
-  function editArticle() {
-    articleId = document.getElementById("articleId").value;
-    window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
-  }
+  <?php include 'script.js' ?>
 </script>
