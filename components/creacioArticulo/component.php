@@ -9,7 +9,7 @@
         <?= $errores ?? null ?>
     </h3>
     <h1>PUBLICA UN NOU ARTICLE</h1>
-    <form action="#" method="post" id="form" enctype="multipart/form-data">
+    <form action="../home/index.php" method="post" id="form" enctype="multipart/form-data">
         <div id="part1" class="part-form-top part1">
             <label for="titulo">Introduïu el títol de l'article: </label> <br />
             <input type="text" name="name" id="name" class="name" /> <span class="invalid-tooltip"></span>
@@ -76,7 +76,7 @@
             <div class="button">
                 <a href="#part6">TORNAR</a>
                 <div class="button-submit">
-                    <input id="submit" type="submit" name="enviar" value="CREA ARTICLE" />
+                    <input id="submit" type="submit" name="crear" value="CREA ARTICLE" />
                 </div>
             </div>
         </div>

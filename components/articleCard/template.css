@@ -1,0 +1,17 @@
+/* Estilos replicados aquí (desde globals.css) */
+/* para que se apliquen bien en el hosting (¿?¿?¿) */
+
+.defaultCardContainer {
+    position: relative;
+  }
+  
+  .defaultCardFixIcon{
+    position: absolute;
+    z-index: 9999;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .defaultCardFixIcon img{
+    width: 40px;
+  }
