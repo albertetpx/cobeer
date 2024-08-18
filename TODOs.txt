@@ -1,11 +1,10 @@
 >>>>>PERFERS BETA<<<<<<<<<
 FIX: bug fixar article (OK?)
-NEW: com navegar per historial d'articles?
 FIX: repassar tasques antigues
 NEW: canvi definitiu a base de dades migrada
 NEW: actualitzar hosting
 
-FIX: protegir edició amb contrassenya en lado servidor
+FIX: protegir edició article amb contrassenya en lado servidor
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
@@ -13,12 +12,12 @@ NEW: poder afegir vídeos. idea: hacerlo encastando iframe youtube
 FIX: responsive??????
 FIX: add bullet list icon to editor (and preserve bullets in articuloCompleto)
 FIX: enllaçar icones del footer amb xarxes socials
->>>>NEW: Password to edit?
 >>>>Corregir animació del home
 >>>>Buscar TODOs i FIX en código
 >>>>Que no s'esborrin les fotos si no es puja cap de nova
 
 DONE:
+NEW: navegar per historial d'articles (de 10 en 10)
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
 NEW: añadir depto FARMACIA
 NEW: añadir en el footer link www.etpxavier.com

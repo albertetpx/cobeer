@@ -77,7 +77,7 @@
         }, delta);
     };
 
-    window.onload = function () {
+    // window.onload = function () {    
         var elements = document.getElementsByClassName('typewrite');
         for (var i = 0; i < elements.length; i++) {
             var toRotate = elements[i].getAttribute('data-type');
@@ -91,5 +91,5 @@
         // css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
-    };
+    // };
 </script>
