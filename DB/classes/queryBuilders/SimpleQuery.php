@@ -104,6 +104,40 @@ class SimpleQuery
         }
         return $rows;
     }
+
+    function listNext10With($filter,$offset)
+    {
+        $count = 0;
+        $where = $filter;
+        $query = "SELECT * FROM " . $this->tableName;
+        foreach ($this->object as $key => $value) {
+            if ($count > 0) {
+                $where .= " AND ";
+            }
+            $where .= $key . " = '" . $value . "'";
+            $count++;
+        }
+
+        $query .= " WHERE ";
+        $query .= $where;
+
+        $query .= " ORDER BY ";
+        $query .= "fechaCreacion";
+        $query .= " DESC";
+        $query .= " LIMIT 10";
+        $query .= " OFFSET ";
+        $query .= $offset;
+        $query .= ";";
+        $result = $this->dbh->query($query);
+        $rows = [];
+        if (isset($result->num_rows)) {
+            while ($row = $result->fetch_assoc()) {
+                array_push($rows, $row);
+            }
+        }
+        return $rows;
+    }
+
     function listWith($filter)
     {
         $count = 0;

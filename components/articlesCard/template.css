@@ -14,3 +14,29 @@
     background-color: #C79D1E;
     padding: 2vh;
 }
+
+.articleNav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+}
+
+.prevButton{
+    width: 2.3em;
+    height: 2.3em;
+    border-radius: 50%;
+    background: url("../../../assets/imagenes/arrow.png");
+    background-size: cover;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+
+.nextButton{
+    width: 2.3em;
+    height: 2.3em;
+    border-radius: 50%;
+    background: url("../../../assets/imagenes/arrow.png");
+    background-size: cover;
+    cursor: pointer;
+  }

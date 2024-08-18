@@ -23,6 +23,9 @@ class Articulo
     function listLast10Unpinned(){
         return $this->SimpleQuery->listLast10With("indBaja=0"); 
     }
+    function listNext10Unpinned($offset){
+        return $this->SimpleQuery->listNext10With("indBaja=0",$offset); 
+    }
     function listWith($id)
     {
         return $this->SimpleQuery->listWith("id=".$id);

@@ -7,9 +7,18 @@ function getArticulos()
     foreach ($articulos as $articulo) {
         include dirname(__DIR__, 1) . '/articleCard/component.php';
     }
-    $articulos = $articulosDB->listLast10Unpinned();
+    if (isset($_GET['page']) and $_GET['page'] >= 2){
+        $articulos = $articulosDB->listNext10Unpinned(($_GET['page']-1)*10);
+        foreach ($articulos as $articulo) {
+            include dirname(__DIR__, 1) . '/articleCard/component.php';
+        }
+    }
+    else{
+        $articulos = $articulosDB->listLast10Unpinned();
     foreach ($articulos as $articulo) {
         include dirname(__DIR__, 1) . '/articleCard/component.php';
     }
+    }
+    
 }
 ?>
