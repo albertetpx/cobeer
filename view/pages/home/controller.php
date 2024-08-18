@@ -167,6 +167,9 @@ function borrarArticle()
     $pass = $_POST['clau'];
 
     if ($pass == "drocacobeer") {
+      // Remove local resources for currentArticleID
+      deleteDir($idArticulo);
+
       $articuloDB = new Articulo();
 
       $recursosDB = new Recurso();
