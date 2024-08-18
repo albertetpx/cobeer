@@ -348,6 +348,20 @@
 }
 
 /* Delete modal styles */
+#editModal{
+  width: 40vw;
+  height: 30vh;
+  background-color: #C79D1E;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 999;
+  top: 30vh;
+  left: 30vw;
+  padding: 3%;
+  text-align: center;
+  display: none;
+}
+
 #deleteModal{
   width: 40vw;
   height: 30vh;

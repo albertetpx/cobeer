@@ -3,14 +3,31 @@ window.onload = function () {
   let deleteButton = document.getElementsByClassName('delete')[0];
   deleteButton.addEventListener('click', deleteArticle);
   let editButton = document.getElementsByClassName('edit')[0];
-  editButton.addEventListener('click', editArticle);
+  editButton.addEventListener('click', editArticleModal);
   let pinButton = document.getElementsByClassName('pin')[0];
   pinButton.addEventListener('click', pinArticle);
+  let editModalButton = document.getElementById('editModalButton');
+  editModalButton.addEventListener('click', editArticle);
 
   let cancelButtons = document.getElementsByClassName('cancelar');
   Array.from(cancelButtons).forEach((cancelButton) => {
     cancelButton.addEventListener('click', cancelDeletion);
   });
+}
+
+function editArticleModal(){
+  document.getElementById("editModal").style.display = "block";
+}
+
+function editArticle() {
+  console.log("editing article...")
+  if(document.getElementById("editPassword").value == 'drocacobeer'){
+    articleId = document.getElementById("articleId").value;
+    window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
+  }
+  else{
+    document.getElementById("editModal").style.display = "none";
+  }
 }
 
 function pinArticle(e) {
@@ -28,11 +45,6 @@ function deleteArticle() {
 
 function cancelDeletion(e) {
   e.target.parentElement.parentElement.style.display = "none";
-}
-
-function editArticle() {
-  articleId = document.getElementById("articleId").value;
-  window.location.href = `../../../view/pages/editarArticulo?idArticle=${articleId}`;
 }
 
 // Carrousel

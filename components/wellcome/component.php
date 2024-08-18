@@ -30,7 +30,7 @@
             <?php include dirname(__DIR__, 1) . '/buscador/component.php' ?>
         </div>
         <h2>
-            Busca per departament, per data o per paraula clau!
+            Busca per paraula clau!
         </h2>
     </div> 
 </div>

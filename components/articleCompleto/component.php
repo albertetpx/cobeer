@@ -75,6 +75,16 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
     </div>
   </div>
 </article>
+<div id="editModal">
+  <h3>Segur que vols editar l'article?</h3>
+  <p>Si es així, introdueix la paraula clau:</p>
+  <form>
+    <input type="password" name="clau" autocomplete="off" id="editPassword">
+    <input type="button" value="EDITA" name="editar" id="editModalButton">
+    <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId">
+    <input type="button" value="CANCEL·LA" class="cancelar">
+  </form>
+</div>
 <div id="deleteModal">
   <h3>Segur que vols esborrar l'article?</h3>
   <p>Si es així, introdueix la paraula clau:</p>
@@ -89,7 +99,7 @@ $departamento = getDepartamento($articulo["idDepartamento"])[0];
   <h3>Segur que vols fixar l'article?</h3>
   <p>Si es així, introdueix la paraula clau:</p>
   <form action="../home/index.php" method="POST">
-    <input type="password" name="clau" autocomplete="off">
+    <input type="password" name="clau" autocomplete="off" id="editPassword">
     <input type="submit" value="FIXA" name="fixar">
     <input type="text" value="<?php echo $_GET["articleId"] ?>" hidden name="id" id="articleId2">
     <input type="button" value="CANCEL·LA" class="cancelar">

@@ -24,7 +24,8 @@ if (isset($_POST['editar'])) {
   editarArticle();
 }
 
-function crearArticle(){
+function crearArticle()
+{
   try {
     $titulo = $_POST['name'];
     $autor = $_POST['autor'];
@@ -37,38 +38,39 @@ function crearArticle(){
     $descripcion = str_replace("<li>", "<li>&bull", $descripcion);
 
     $articuloDB = new Articulo(
-        array(
-            "titulo" => str_replace("'", "\'", $titulo),
-            "autor" => $autor,
-            "descripcion" => str_replace("'", "\'", $resumen),
-            "idDepartamento" => $departamento,
-            "fechaCreacion" => date("Y-m-d") . " " . date("H:i"),
-            "texto" => str_replace("'", "\'", $descripcion),
-            "tags" => $tags
-        )
+      array(
+        "titulo" => str_replace("'", "\'", $titulo),
+        "autor" => $autor,
+        "descripcion" => str_replace("'", "\'", $resumen),
+        "idDepartamento" => $departamento,
+        "fechaCreacion" => date("Y-m-d") . " " . date("H:i"),
+        "texto" => str_replace("'", "\'", $descripcion),
+        "tags" => $tags
+      )
     );
 
     $articulo = $articuloDB->insert();
 
     $paths = storeFiles($_FILES["fileToUpload"], $articulo['id']);
     foreach ($paths as $path) {
-        $path = str_replace("\\", "/", $path);
-        // echo $path;
-        $recursoDB = new Recurso(
-            array(
-                "url" => $path,
-                "idArticulo" => $articulo['id']
-            )
-        );
-        $recurso = $recursoDB->insert();
+      $path = str_replace("\\", "/", $path);
+      // echo $path;
+      $recursoDB = new Recurso(
+        array(
+          "url" => $path,
+          "idArticulo" => $articulo['id']
+        )
+      );
+      $recurso = $recursoDB->insert();
     }
-} catch (Exception $e) {
+  } catch (Exception $e) {
 
     $errores = "Hay que revisar esos puntos : <br> " . $e->getMessage();
-}
+  }
 }
 
-function editarArticle(){
+function editarArticle()
+{
   try {
     $titulo = $_POST['name'];
     $autor = $_POST['autor'];
@@ -78,50 +80,53 @@ function editarArticle(){
     $tags = $_POST['tag'];
     $id = $_POST['idArticulo'];
 
-    $articuloDB = new Articulo(
+    if ($pass == "drocacobeer") {
+      $articuloDB = new Articulo(
         array(
-            "id" => $id,
-            "titulo" => str_replace("'", "\'", $titulo),
-            "autor" => $autor,
-            "descripcion" => str_replace("'", "\'", $resumen),
-            "idDepartamento" => $departamento,
-            "fechaCreacion" => date("Y-m-d") . " " . date("H:i"),
-            "texto" => str_replace("'", "\'", $descripcion),
-            "tags" => $tags
+          "id" => $id,
+          "titulo" => str_replace("'", "\'", $titulo),
+          "autor" => $autor,
+          "descripcion" => str_replace("'", "\'", $resumen),
+          "idDepartamento" => $departamento,
+          "fechaCreacion" => date("Y-m-d") . " " . date("H:i"),
+          "texto" => str_replace("'", "\'", $descripcion),
+          "tags" => $tags
         )
-    );
+      );
 
-    $articulo = $articuloDB->update();
+      $articulo = $articuloDB->update();
 
-    // Remove local resources for currentArticleID
-    deleteDir($id);
-    // Remove all DB resources for currenArticleID
-    $recursosDB = new Recurso();
-    $recurso = $recursosDB->delete($id);
+      // Remove local resources for currentArticleID
+      deleteDir($id);
+      // Remove all DB resources for currenArticleID
+      $recursosDB = new Recurso();
+      $recurso = $recursosDB->delete($id);
 
-    $paths = storeFiles($_FILES["fileToUpload"], $id);
-    foreach ($paths as $path) {
+      $paths = storeFiles($_FILES["fileToUpload"], $id);
+      foreach ($paths as $path) {
         $path = str_replace("\\", "/", $path);
         // echo $path;
         $recursoDB = new Recurso(
-            array(
-                "url" => $path,
-                "idArticulo" => $id
-            )
+          array(
+            "url" => $path,
+            "idArticulo" => $id
+          )
         );
         $recurso = $recursoDB->insert();
+      }
     }
-} catch (Exception $e) {
+
+  } catch (Exception $e) {
 
     $errores = "Hay que revisar esos puntos : <br> " . $e->getMessage();
-} 
+  }
 }
 
 
 function fixarArticle()
 {
   try {
-    $idArticulo = $_POST['id']; 
+    $idArticulo = $_POST['id'];
 
     $articuloDB = new Articulo(
       array(

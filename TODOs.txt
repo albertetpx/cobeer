@@ -1,4 +1,11 @@
->>>>FIX: cuidado, hosting caduca!!!!!!!!!!!!!!!
+>>>>>PERFERS BETA<<<<<<<<<
+FIX: bug fixar article (OK?)
+NEW: protegir edició amb contrassenya
+NEW: com navegar per historial d'articles?
+FIX: repassar tasques antigues
+NEW: canvi definitiu a base de dades migrada
+NEW: actualitzar hosting
+
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
@@ -10,7 +17,6 @@ FIX: enllaçar icones del footer amb xarxes socials
 >>>>Corregir animació del home
 >>>>Buscar TODOs i FIX en código
 >>>>Que no s'esborrin les fotos si no es puja cap de nova
->>>>Pasar gesti´n de editarArticulo, crearArticulo a ctrlr de home
 
 DONE:
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
@@ -26,3 +32,4 @@ FIX: more width to images en ArticuloCompleto
 NEW: editar posts
 NEW: poder fijar posts destacados
 FIX: enlazar menu departamentos en el navbar
+FX: Pasar gestión de editarArticulo, crearArticulo a ctrlr de home
