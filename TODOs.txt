@@ -1,11 +1,11 @@
 >>>>>PERFERS BETA<<<<<<<<<
 FIX: bug fixar article (OK?)
-NEW: protegir edició amb contrassenya
 NEW: com navegar per historial d'articles?
 FIX: repassar tasques antigues
 NEW: canvi definitiu a base de dades migrada
 NEW: actualitzar hosting
 
+FIX: protegir edició amb contrassenya en lado servidor
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
