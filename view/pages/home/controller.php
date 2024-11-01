@@ -80,7 +80,7 @@ function editarArticle()
     $tags = $_POST['tag'];
     $id = $_POST['idArticulo'];
 
-    $descripcion = str_replace("</p>", "</p><br>", $descripcion);
+    // $descripcion = str_replace("</p>", "</p><br>", $descripcion);
 
     $articuloDB = new Articulo(
       array(
