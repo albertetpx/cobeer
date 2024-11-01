@@ -11,8 +11,6 @@
                 <!-- <img src="../../../assets/imagenes/portada.jpg" alt=""> -->
             </div>
             <div class="flip-card-back">
-                <!-- <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" /> -->
-                <!-- <img src="../../../assets/imagenes/portada.jpg" width="800" alt=""> -->
                 <div class="label">
                     <p>El projecte CooBeer és un projecte interdisciplinar que consisteix en l’elaboració de cervesa
                         artesana per part de l’alumnat de segon del cicle de grau superior de dietètica, com a mètode
@@ -24,7 +22,6 @@
                         – 2020 i que continua duent-se a terme al cicle de dietètica a l’hora hi ha un seguit
                         d’implementacions que permeten interaccionar amb altres cicles formatius i organitzacions de
                         fora de l’escola, per tal de donar una visió més holística dels ensenyaments de l’escola.
-
                     </p>
                 </div>
             </div>

@@ -53,10 +53,6 @@
 }
 
 .flip-card-back {
-    /* background-color: white; */
-    /* background-image: url("../../../assets/imagenes/portada.jpg"); */
-    /* background-size: cover; */
-    /* opacity: 50%; */
     color: black;
     transform: rotateY(180deg);
     display: flex;
@@ -80,7 +76,6 @@
 
 .flip-card-back img {
     width: 70%;
-    /* margin-top: 1rem; */
 }
 
 .flip-card-back .label {
@@ -89,7 +84,7 @@
     color: black;
     text-align: center;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 18px;
     padding: 2px 20px 2px 20px;
     border-radius: 16px;
     position: absolute;
