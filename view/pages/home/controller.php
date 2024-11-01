@@ -95,23 +95,27 @@ function editarArticle()
 
     $articulo = $articuloDB->update();
 
-    // Remove local resources for currentArticleID
-    deleteDir($id);
-    // Remove all DB resources for currenArticleID
-    $recursosDB = new Recurso();
-    $recurso = $recursosDB->delete($id);
+    // Check if new photo has been uploaded
+    if ($_FILES['fileToUpload']['name'][0] != "") {
+      // Remove local resources for currentArticleID
+      deleteDir($id);
+      // Remove all DB resources for currenArticleID
+      $recursosDB = new Recurso();
+      $recurso = $recursosDB->delete($id);
 
-    $paths = storeFiles($_FILES["fileToUpload"], $id);
-    foreach ($paths as $path) {
-      $path = str_replace("\\", "/", $path);
-      // echo $path;
-      $recursoDB = new Recurso(
-        array(
-          "url" => $path,
-          "idArticulo" => $id
-        )
-      );
-      $recurso = $recursoDB->insert();
+      $paths = storeFiles($_FILES["fileToUpload"], $id);
+      foreach ($paths as $path) {
+        $path = str_replace("\\", "/", $path);
+        // echo $path;
+        $recursoDB = new Recurso(
+          array(
+            "url" => $path,
+            "idArticulo" => $id
+          )
+        );
+        $recurso = $recursoDB->insert();
+      }
+
     }
 
 

@@ -1,9 +1,5 @@
->>>>>PERFERS BETA<<<<<<<<<
-NEW: Que no s'esborrin les fotos si no es puja cap de nova <<<<
-NEW: actualitzar hosting
-
 PERFERS:
-FIX: protegir edició article amb contrassenya en lado servidor
+FIX: protegir edició article amb contrassenya en lado servidor (sic)
 FIX: arrastrar imágenes al formulario creacion articulo
 NEW: que se puedan adjuntar documentos al artículo
 NEW: poder enlazar posts entre sí
@@ -13,6 +9,7 @@ FIX: add bullet list icon to editor (and preserve bullets in articuloCompleto)
 FIX: enllaçar icones del footer amb xarxes socials
 
 DONE:
+NEW: Que no s'esborrin les fotos si no es puja cap de nova <<<<
 FIX: bug fixar article (OK?)
 NEW: navegar per historial d'articles (de 10 en 10)
 FIX: articleCard, warning cuando no hay recurso para articulo. Añadir imagen dummy
