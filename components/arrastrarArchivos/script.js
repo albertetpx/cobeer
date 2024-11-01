@@ -41,7 +41,8 @@ function processFile(file) {
   // Validamos las extensiones permitidas
   const validExtensions = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
 
-  if(file.size <= 2000000){
+  // Check file size < 5MB
+  if(file.size <= 5000000){
     if (validExtensions.includes(docType)) {
       console.log("Added file");
       // Archivo valido, con este objeto extraeremos las propiedades del archivo
