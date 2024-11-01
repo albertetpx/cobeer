@@ -13,15 +13,15 @@
             <div class="flip-card-back">
                 <div class="label">
                     <p>El projecte CooBeer és un projecte interdisciplinar que consisteix en l’elaboració de cervesa
-                        artesana per part de l’alumnat de segon del cicle de grau superior de dietètica, com a mètode
+                        artesana per part de l’alumnat de 2n del CFGS de Dietètica, com a mètode
                         d’experimentació pràctica i real, per tal d’aplicar els conceptes teòrics relacionats, essent la
                         fabricació de la cervesa el fil conductor que afavoreix treballar continguts de química,
                         microbiologia, història, medicina, indústria, comerç, màrqueting ...
-
+                        <br><br>
                         És un projecte guanyador del Pla de Mesures d’Innovació a la Formació Professional el curs 2019
-                        – 2020 i que continua duent-se a terme al cicle de dietètica a l’hora hi ha un seguit
+                        – 2020 i que continua duent-se a terme al cicle de dietètica. Alhora hi ha un seguit
                         d’implementacions que permeten interaccionar amb altres cicles formatius i organitzacions de
-                        fora de l’escola, per tal de donar una visió més holística dels ensenyaments de l’escola.
+                        fora de l’escola per tal de donar una visió més holística dels ensenyaments.
                     </p>
                 </div>
             </div>
