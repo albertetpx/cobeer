@@ -1,3 +1,6 @@
+PERFERS BETA:
+Añadir espacio entre párrafos.
+
 PERFERS:
 FIX: protegir edició article amb contrassenya en lado servidor (sic)
 FIX: arrastrar imágenes al formulario creacion articulo
