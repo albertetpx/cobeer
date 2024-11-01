@@ -7,7 +7,7 @@
 <div class="tituloArtDest">
     <h1>Darrers articles publicats</h1>
 </div>
-<div class="articlesCardContainer">
+<div class="articlesCardContainer" id="articleContainer">
     <input type="text" value="<?php echo $_GET["page"] ?? '1' ?>" hidden name="page" id="page">
     <?php getArticulos() ?>
 </div>
