@@ -1,19 +1,31 @@
 <style>
-<?php include __DIR__ . '/template.css';
-?>
+    <?php include __DIR__ . '/template.css';
+    ?>
 </style>
 
 <div class="productoInicio">
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" />
+                <!-- <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" /> -->
+                <!-- <img src="../../../assets/imagenes/portada.jpg" alt=""> -->
             </div>
             <div class="flip-card-back">
-                <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" />
+                <!-- <img src="https://zetabeer.com/wp-content/uploads/2019/06/hop.png" /> -->
+                <!-- <img src="../../../assets/imagenes/portada.jpg" width="800" alt=""> -->
                 <div class="label">
-                    <p>Des de 2018, l'ETP Xavier elabora de manera col·laborativa la seva pròpia cervesa.
-                    <br><i>(Projecte CooBeer, guardonat amb el Premi Nomeacuerdo del Nombre)</p>
+                    <p>El projecte CooBeer és un projecte interdisciplinar que consisteix en l’elaboració de cervesa
+                        artesana per part de l’alumnat de segon del cicle de grau superior de dietètica, com a mètode
+                        d’experimentació pràctica i real, per tal d’aplicar els conceptes teòrics relacionats, essent la
+                        fabricació de la cervesa el fil conductor que afavoreix treballar continguts de química,
+                        microbiologia, història, medicina, indústria, comerç, màrqueting ...
+
+                        És un projecte guanyador del Pla de Mesures d’Innovació a la Formació Professional el curs 2019
+                        – 2020 i que continua duent-se a terme al cicle de dietètica a l’hora hi ha un seguit
+                        d’implementacions que permeten interaccionar amb altres cicles formatius i organitzacions de
+                        fora de l’escola, per tal de donar una visió més holística dels ensenyaments de l’escola.
+
+                    </p>
                 </div>
             </div>
         </div>
@@ -32,7 +44,7 @@
         <h2>
             Busca per paraula clau!
         </h2>
-    </div> 
+    </div>
 </div>
 
 <script>
@@ -78,18 +90,18 @@
     };
 
     // window.onload = function () {    
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i = 0; i < elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
         }
-        // INJECT CSS
-        var css = document.createElement("style");
-        // css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    // css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
     // };
 </script>

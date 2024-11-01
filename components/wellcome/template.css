@@ -40,10 +40,12 @@
 .flip-card-front {
     /* background-image: linear-gradient(90deg, rgba(255, 167, 76, 1) 0%, rgba(252, 190, 126, 1) 100%); */
     background-color: white;
+    background-image: url("../../../assets/imagenes/portada.jpg");
+    background-size: cover;
 }
 
 .flip-card-front img {
-    width: 120px;
+    width: 70%;
     margin-top: 1rem;
     z-index: 1;
     position: relative;
@@ -51,8 +53,10 @@
 }
 
 .flip-card-back {
-    /* background-image: linear-gradient(90deg, rgba(255, 167, 76, 1) 0%, rgba(252, 190, 126, 1) 100%); */
-    background-color: white;
+    /* background-color: white; */
+    /* background-image: url("../../../assets/imagenes/portada.jpg"); */
+    /* background-size: cover; */
+    /* opacity: 50%; */
     color: black;
     transform: rotateY(180deg);
     display: flex;
@@ -61,21 +65,38 @@
     padding: 5px;
 }
 
-.flip-card-back img {
-    width: 80px;
-    /* margin-top: 1rem; */
-}
-
-.flip-card-back .label{
-    width: 90%;
-    background-color: #EDBB24;
-    color: white;
-    text-align: center;
-    padding: 2px 20px 2px 20px;
+.flip-card-back::before {
+    content: "";
+    background-image: url("../../../assets/imagenes/portada.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 20%;
     border-radius: 16px;
 }
 
-.titleHome{
+.flip-card-back img {
+    width: 70%;
+    /* margin-top: 1rem; */
+}
+
+.flip-card-back .label {
+    width: 90%;
+    /* background-color: #EDBB24; */
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 2px 20px 2px 20px;
+    border-radius: 16px;
+    position: absolute;
+    top: 10%;
+}
+
+.titleHome {
     padding-top: 10vh;
     width: 30vw;
     display: flex;
@@ -83,12 +104,12 @@
     row-gap: 10vh;
 }
 
-.typewrite{
+.typewrite {
     font-size: 40px;
     margin-bottom: 10vh;
 }
 
-.titleHome h2{
+.titleHome h2 {
     font-size: 22px;
     color: black;
 }
